@@ -86,7 +86,7 @@ gulp.task('bundle', () => {
 });
 
 gulp.task('build', ['styles', 'images', 'bundle'],  () => {
-	gulp.src([`${dirs.app}/*.html`, `${dirs.app}/style.css`, `${dirs.app}/bundle.js`])
+	gulp.src([`${dirs.app}/*.html`, `${dirs.app}/style.css`, `${dirs.app}/bundle.js`, `${dirs.app}/CNAME`])
 		.pipe(gulp.dest(dirs.dist));
 });
 
