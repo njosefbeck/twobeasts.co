@@ -85,7 +85,7 @@ gulp.task('bundle', () => {
 	bundle(bundler);
 });
 
-gulp.task('build', ['styles', 'images', 'bundle', 'fonts'],  () => {
+gulp.task('build', ['styles', 'images', 'bundle'],  () => {
 	gulp.src([`${dirs.app}/*.html`, `${dirs.app}/style.css`, `${dirs.app}/bundle.js`])
 		.pipe(gulp.dest(dirs.dist));
 });
