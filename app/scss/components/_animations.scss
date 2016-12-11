@@ -8,6 +8,16 @@
 	}
 }
 
+@keyframes in-left {
+	0% {
+		transform: translateX(-100vw);
+	}
+
+	100% {
+		transform: translateX(0vw);
+	}
+}
+
 @keyframes out-up {
 	10% {
 		transform: translateY(0);
