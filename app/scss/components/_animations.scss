@@ -47,3 +47,39 @@
 		transform: translateX(100vw);
 	}
 }
+
+.out-left {
+	animation-name: out-left;
+	animation-duration: 5s;
+	animation-delay: 0;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.out-up {
+	animation-name: out-up;
+	animation-duration: 5s;
+	animation-delay: 0;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.out-down {
+	animation-name: out-down;
+	animation-duration: 5s;
+	animation-delay: 0;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.out-right {
+	animation-name: out-right;
+	animation-duration: 5s;
+	animation-delay: 0;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}

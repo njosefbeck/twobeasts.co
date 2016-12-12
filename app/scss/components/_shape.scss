@@ -4,3 +4,12 @@
 	width: 75px;
 	margin: 10px;
 }
+
+.js-diamond, .js-six-pointed-star,
+.js-four-pointed-shape, .js-eight-pointed-star {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: -20px;
+	position: absolute;
+}

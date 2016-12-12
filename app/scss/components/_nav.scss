@@ -8,6 +8,7 @@ nav {
 	.nav-group {
 		position: relative;
 		margin: 0 10px 0;
+		transition: all 1s ease-in-out;
 
 		&:hover {
 	    	.nav-link {
@@ -40,40 +41,4 @@ nav {
 .four-pointed-shape {
 	fill: white;
 	transition: all 0.5s ease-in-out;
-}
-
-.diamond-nav {
-	animation-name: out-left;
-	animation-duration: 5s;
-	animation-delay: 3s;
-	animation-timing-function: ease;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
-.six-pointed-star-nav {
-	animation-name: out-up;
-	animation-duration: 5s;
-	animation-delay: 3s;
-	animation-timing-function: ease;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
-.four-pointed-shape-nav {
-	animation-name: out-down;
-	animation-duration: 5s;
-	animation-delay: 3s;
-	animation-timing-function: ease;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
-.eight-pointed-star-nav {
-	animation-name: out-right;
-	animation-duration: 5s;
-	animation-delay: 3s;
-	animation-timing-function: ease;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
 }

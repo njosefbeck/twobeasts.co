@@ -1,2 +1,7 @@
 'use strict';
-console.log('Is this thing on?');
+import $ from 'jquery';
+import * as a from './animate';
+
+$(document).ready(() => {
+	a.animateDiamondOnClick();
+});
