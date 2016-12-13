@@ -6,12 +6,48 @@ export function animateDiamondOnClick() {
 	$diamond.on('click', moveDiamondLeft);
 }
 
+export function animateSixPointedStarOnClick() {
+	const $sixPointedStar = $('.js-six-pointed-star');
+	$sixPointedStar.on('click', moveSixPointedStarUp);
+}
+
+export function animateFourPointedShapeOnClick() {
+	const $fourPointedShape = $('.js-four-pointed-shape');
+	$fourPointedShape.on('click', moveFourPointedShapeDown);
+}
+
+export function animateEightPointedStarOnClick() {
+	const $eightPointedStar = $('.js-eight-pointed-star');
+	$eightPointedStar.on('click', moveEightPointedStarRight);
+}
+
+function moveSixPointedStarUp() {
+	const $container = $(getElementContainer($(this)));
+	let YOffset = getYOffset($container);
+	translateYPixels($container, 'up', YOffset);
+	moveRemainingShapesOffscreen($container.siblings());
+}
+
 function moveDiamondLeft() {
 	const $container = $(getElementContainer($(this)));
 	let XOffset = getXOffset($container);
-	translateXPixels($container, XOffset);
+	translateXPixels($container, 'left', XOffset);
 	moveRemainingShapesOffscreen($container.siblings());
-};
+}
+
+function moveFourPointedShapeDown() {
+	const $container = $(getElementContainer($(this)));
+	let YOffset = getYOffset($container);
+	translateYPixels($container, 'down', YOffset);
+	moveRemainingShapesOffscreen($container.siblings());
+}
+
+function moveEightPointedStarRight() {
+	const $container = $(getElementContainer($(this)));
+	let XOffset = getXOffset($container);
+	translateXPixels($container, 'right', XOffset);
+	moveRemainingShapesOffscreen($container.siblings());
+}
 
 function getElementContainer($element) {
 	return $element.parent();
@@ -25,11 +61,19 @@ function getYOffset($element) {
 	return $element.offset().top;
 }
 
-function translateXPixels($element, XOffset, $elementHeight = 0) {
-	$element.css({
-		"-webkit-transform": `translateX(-${XOffset + $elementHeight}px)`,
-		"transform": `translateX(-${XOffset + $elementHeight}px)`
-	});
+function translateXPixels($element, direction, XOffset, $elementWidth = 0) {
+	if (direction == 'left') {
+		$element.css({
+			"-webkit-transform": `translateX(-${XOffset + $elementWidth}px)`,
+			"transform": `translateX(-${XOffset + $elementWidth}px)`
+		});
+	} else {
+		let pixelsFromRight = $(window).width() - (XOffset + $element.width());
+		$element.css({
+			"-webkit-transform": `translateX(${pixelsFromRight + $elementWidth}px)`,
+			"transform": `translateX(${pixelsFromRight + $elementWidth}px)`
+		});
+	}
 }
 
 function translateYPixels($element, direction, YOffset, $elementHeight = 0) {
@@ -56,6 +100,8 @@ function moveRemainingShapesOffscreen(siblings) {
 		
 		switch (type) {
 			case 'diamond':
+				let diamondXOffset = getXOffset($siblingElement);
+				translateXPixels($siblingElement, 'left', diamondXOffset, $siblingElement.width());
 				break;
 			case 'six-pointed-star':
 				let sixStarYOffset = getYOffset($siblingElement);
@@ -66,6 +112,8 @@ function moveRemainingShapesOffscreen(siblings) {
 				translateYPixels($siblingElement, 'down', fourShapeYOffset, $siblingElement.height());
 				break;
 			case 'eight-pointed-star':
+				let eightStarXOffset = getXOffset($siblingElement);
+				translateXPixels($siblingElement, 'right', eightStarXOffset, $siblingElement.width());
 				break;
 			default:
 				console.log('No siblings match the required types');

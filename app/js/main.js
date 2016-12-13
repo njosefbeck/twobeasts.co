@@ -4,4 +4,7 @@ import * as a from './animate';
 
 $(document).ready(() => {
 	a.animateDiamondOnClick();
+	a.animateSixPointedStarOnClick();
+	a.animateFourPointedShapeOnClick();
+	a.animateEightPointedStarOnClick();
 });
