@@ -34,28 +34,28 @@
 <header>
 	<h1 class="js-site-title">Two Beasts</h1>
 	<nav>
-		<div class="nav-group">
+		<div data-section="about" class="nav-group">
 			<object type="image/svg+xml" data="images/diamond.svg">
 				Your browser doesn't support SVGs
 			</object>
 			<span class="nav-link">About</span>
 			<div class="js-diamond"></div>
 		</div>
-		<div class="nav-group">
+		<div data-section="services" class="nav-group">
 			<object type="image/svg+xml" data="images/six-pointed-star.svg">
 				Your browser doesn't support SVGs
 			</object>
 			<span class="nav-link">Services</span>
 			<div class="js-six-pointed-star"></div>
 		</div>
-		<div class="nav-group">
+		<div data-section="portfolio" class="nav-group">
 			<object type="image/svg+xml" data="images/four-pointed-shape.svg">
 				Your browser doesn't support SVGs
 			</object>
 			<span class="nav-link">Portfolio</span>
 			<div class="js-four-pointed-shape"></div>
 		</div>
-		<div class="nav-group">
+		<div data-section="contact" class="nav-group">
 			<object type="image/svg+xml" data="images/eight-pointed-star.svg">
 				Your browser doesn't support SVGs
 			</object>
@@ -76,6 +76,16 @@
 	</section>
 	<section id="contact">
 		<h2>Contact</h2>
+		<form action="https://formspree.io/hellotwobeasts@gmail.com" method="POST">
+			<input type="text" name="name" placeholder="Name" required />
+			<input type="email" name="_replyto" placeholder="Email" required />
+			<input type="text" name="website" placeholder="Website" />
+			<input type="text" name="_gotcha" style="display: none;" />
+			<textarea name="message" required>Type your message here</textarea>
+			<input type="submit" value="Send" />
+			<input type="hidden" name="_next" value="/thanks.html" />
+			<input type="hidden" name="_subject" value="New submission!" />
+		</form>
 	</section>
 </main>
 	<script type="text/javascript" src="bundle.js"></script>

@@ -17,6 +17,54 @@ export function animateEightPointedStarOnClick() {
 	$('.js-eight-pointed-star').on('click', moveShapeRight);
 }
 
+export function animateHeaderOnMobile() {
+	$('.nav-group').one('click', moveMobileHeader);
+}
+
+export function handleMobileNavClick() {
+	$('.nav-group').on('click', changeSection);
+}
+
+function moveMobileHeader() {
+	const $header = $('header');
+	const section = $(this).data('section');
+	const $section = $(`#${section}`);
+	let offset = getYOffset($header);
+	translateYPixels($header, 'up', offset);
+	$section.addClass('showing');
+	$('.nav-group').off('click');
+	handleMobileNavClick();
+}
+
+function changeSection() {
+	const $navItem = $(this);
+	const $navSection = $(`#${$(this).data('section')}`);
+	const sectionLinkedFromNavItem = $navItem.data('section');
+	const $activeSection = getActiveSection();
+	const activeSectionID = $activeSection.attr('id');
+	console.log($navSection, activeSectionID);
+
+	if (sectionLinkedFromNavItem !== activeSectionID) {
+		console.log('We need to change the active section!');
+		toggleVisibility($activeSection);
+		toggleVisibility($navSection);
+	}
+
+	if (sectionLinkedFromNavItem === activeSectionID) {
+		console.log('This page is already open!');
+	}
+}
+
+function getActiveSection() {
+	let section;
+	$('section').each(function() {
+		if ($(this).hasClass('showing')) {
+			section = $(this);
+		}
+	});
+	return section;
+}
+
 function moveShapeUp() {
 	const $container = getElementContainer($(this));
 	moveShapes($container, $('#services'), getYOffset, translateYPixels, 'up');
@@ -50,19 +98,16 @@ function moveShapes($container, $content, getOffset, translatePixels, direction)
 	moveRemainingShapesOffscreen($container.siblings());
 	fadeToggleSiteTitle();
 	fadeToggleSection($content);
+	$('.nav-link').fadeToggle();
 }
 
 function toggleVisibility($element) {
 	if ($element.css('visibility') !== 'hidden') {
-		$element.css({
-			'visibility': 'hidden',
-			'opacity': 0
-		});
+		$element.addClass('hidden');
+		$element.removeClass('showing');
 	} else {
-		$element.css({
-			'visibility': 'visible',
-			'opacity': 1
-		});
+		$element.addClass('showing');
+		$element.removeClass('hidden');
 	}
 }
 
