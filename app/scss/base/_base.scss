@@ -7,7 +7,7 @@ body {
 	text-align: center;
 	height: 100vh;
 	display: flex;
-	background-image: url('images/bg.jpeg');
+	background-image: url('images/bg.jpg');
 	background-size: cover;
 	overflow: hidden;
 
@@ -82,7 +82,7 @@ section {
 	bottom: 80px;
 	visibility: hidden;
 	opacity: 0;
-	overflow: scroll;
+	overflow: auto;
 	transition: all 1s ease-in-out;
 
 	@media (max-width: 600px) {
