@@ -1,0 +1,12 @@
+#about {
+	img {
+		float: right;
+
+		@media (max-width: 600px) {
+			float: none;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 16px;
+		}
+	}
+}
