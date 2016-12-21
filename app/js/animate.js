@@ -30,8 +30,16 @@ function moveMobileHeader() {
 	const section = $(this).data('section');
 	const $section = $(`#${section}`);
 	let offset = getYOffset($header);
-	translateYPixels($header, 'up', offset);
-	$section.addClass('showing');
+	$header.css({
+		'position': 'relative',
+		'top': '13%'
+	})
+	setTimeout(function() {
+		$section.addClass('showing');
+		$section.css({
+			'display': 'block'
+		});
+	}, 1000);
 	$('.nav-group').off('click');
 	handleMobileNavClick();
 }
@@ -46,8 +54,8 @@ function changeSection() {
 
 	if (sectionLinkedFromNavItem !== activeSectionID) {
 		console.log('We need to change the active section!');
-		toggleVisibility($activeSection);
-		toggleVisibility($navSection);
+		toggleMobileVisibility($activeSection);
+		toggleMobileVisibility($navSection);
 	}
 
 	if (sectionLinkedFromNavItem === activeSectionID) {
@@ -107,6 +115,18 @@ function toggleVisibility($element) {
 		$element.removeClass('showing');
 	} else {
 		$element.addClass('showing');
+		$element.removeClass('hidden');
+	}
+}
+
+function toggleMobileVisibility($element) {
+	if ($element.css('visibility') !== 'hidden') {
+		$element.addClass('hidden');
+		$element.removeClass('showing');
+		$element.css('display', 'none');
+	} else {
+		$element.addClass('showing');
+		$element.css('display', 'block');
 		$element.removeClass('hidden');
 	}
 }

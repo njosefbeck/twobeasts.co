@@ -13,6 +13,7 @@ import ghPages from 'gulp-gh-pages';
 import imagemin from 'gulp-imagemin';
 import {create as bsCreate} from 'browser-sync';
 import cache from 'gulp-cache';
+import minify from 'gulp-minifier';
 const browserSync = bsCreate();
 
 const dirs = {
@@ -87,6 +88,18 @@ gulp.task('bundle', () => {
 
 gulp.task('build', ['styles', 'images', 'bundle'],  () => {
 	gulp.src([`${dirs.app}/*.html`, `${dirs.app}/style.css`, `${dirs.app}/bundle.js`, `${dirs.app}/CNAME`])
+		.pipe(gulp.dest(dirs.dist));
+});
+
+gulp.task('minify', () => {
+	return gulp.src(dirs.dist + '/**/*')
+		.pipe(minify({
+			minify: true,
+			collapseWhitespace: true,
+			conservativeCollapse: true,
+			minifyJS: true,
+			minifyCSS: true
+		}))
 		.pipe(gulp.dest(dirs.dist));
 });
 
