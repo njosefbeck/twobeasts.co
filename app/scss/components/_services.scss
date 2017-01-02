@@ -1,0 +1,15 @@
+#services {
+	& > ul {
+		margin-bottom: 20px;
+	}
+
+	ul {
+		list-style-type: disc;
+		margin-left: 20px;
+		text-align: left;
+
+		li {
+			line-height: 1.3;
+		}
+	}
+}
