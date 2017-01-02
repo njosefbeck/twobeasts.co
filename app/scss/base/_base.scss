@@ -98,6 +98,12 @@ section {
 		font-style: italic;
 	}
 
+	p {
+		a {
+			text-decoration: underline;
+		}
+	}
+
 	@media (max-width: 600px) {
 		border: 0;
 		text-align: center;
