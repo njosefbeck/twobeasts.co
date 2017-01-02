@@ -1,0 +1,15 @@
+.thank-you-page {
+	color: $white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+
+	main {
+		width: 100%;
+		padding: 20px;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+}

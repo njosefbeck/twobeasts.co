@@ -1,12 +1,16 @@
 #about {
 	img {
 		float: right;
+		padding-left: 10px;
+		width: 300px;
+		height: 300px;
 
 		@media (max-width: 600px) {
 			float: none;
 			display: block;
 			margin: 0 auto;
 			margin-bottom: 16px;
+			padding-left: 0;
 		}
 	}
 }
