@@ -12,17 +12,27 @@
 		}
 	}
 
+	p {
+		margin-left: 20px;
+		margin-top: 20px;
+	}
+
 	ul {
 		overflow-x: auto;
 		overflow-y: hidden;
 		white-space: nowrap;
 		height: 85%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
 
 		@media (max-width: 600px) {
 			overflow-x: auto;
 			overflow-y: auto;
 			white-space: normal;
 			height: unset;
+			position: relative;
 		}
 	}
 
