@@ -25,11 +25,12 @@ body {
 header {
 	margin: auto;
 	padding: 1.5rem;
-	max-width: 400px;
+	flex-basis: 100%;
 	transition: all 1s ease-in-out;
 
 	@media (max-width: 600px) {
 		position: absolute;
+		max-width: 400px;
 		top: 45%;
 		transform: translateY(-55%);
 		left: 0;
