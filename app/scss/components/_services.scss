@@ -1,6 +1,10 @@
 #services {
 	& > ul {
 		margin-bottom: 20px;
+
+		> li {
+			margin-bottom: 10px;
+		}
 	}
 
 	ul {
