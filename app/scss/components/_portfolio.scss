@@ -13,13 +13,8 @@
 	}
 
 	p {
-		margin-left: 20px;
-		margin-top: 20px;
-
-		@media (max-width: 600px) {
-			margin-left: 0;
-			margin-top: 0;
-		}
+		margin-left: 0;
+		margin-top: 0;
 	}
 
 	ul {
@@ -43,6 +38,7 @@
 
 	li {
 		display: inline-block;
+		white-space: normal;
 		position: relative;
 		margin-left: -4px;
 		width: 50%;
@@ -76,6 +72,34 @@
 		height: 100%;
 		margin: 0;
 		padding: 0;
+	}
+
+	.landscape-image {
+		display: block;
+
+		@media (min-width: 599px) {
+			display: none;
+		}
+
+		@media (min-width: 761px) and (max-width: 999px) {
+			display: block;
+		}
+	}
+
+	.portrait-image {
+		display: none;
+
+		@media (min-width: 600px) and (max-width: 760px) {
+			display: block;
+		}
+
+		@media (min-width: 761px) and (max-width: 999px) {
+			display: none;
+		}
+
+		@media (min-width: 1000px) {
+			display: block
+		}
 	}
 
 	.overlay {
