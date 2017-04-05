@@ -71,8 +71,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('images', () => {
-	gulp.src('app/images/*')
-		.pipe(cache(imagemin()))
+	gulp.src('app/images/**/*')
 		.pipe(gulp.dest('dist/images'));
 });
 
