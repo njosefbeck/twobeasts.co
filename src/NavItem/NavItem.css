@@ -1,0 +1,18 @@
+.navItem {
+  position: relative;
+  margin: 0 14px 0;
+}
+
+.navItem a {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  transition: all 0.5s ease-in-out;
+  bottom: -20px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
