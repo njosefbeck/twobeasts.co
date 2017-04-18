@@ -7,3 +7,10 @@
   fill: white;
   transition: all 0.5s ease-in-out;
 }
+
+@media (min-width: 600px) {
+  .shape {
+    width: 75px;
+    height: 75px;
+  }
+}

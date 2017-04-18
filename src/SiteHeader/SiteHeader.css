@@ -1,4 +1,9 @@
-header {
-  background-color: pink;
-  padding: 1.5rem;
+.site-header {
+  
+}
+
+@media (min-width: 600px) {
+  .site-header.section-open {
+    display: none;
+  }
 }

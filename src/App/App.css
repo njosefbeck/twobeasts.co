@@ -1,3 +1,20 @@
 .App {
-  
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App.section-open {
+  display: block;
+  height: auto;
+  margin-top: 20px;
+}
+
+@media (min-width: 600px) {
+  .App.section-open {
+    display: flex;
+    height: 100vh;
+    margin-top: 0;
+  }
 }

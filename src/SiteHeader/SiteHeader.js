@@ -7,8 +7,9 @@ import Nav from '../Nav/Nav.js';
 
 class SiteHeader extends Component {
   render() {
+    console.log();
     return (
-      <header>
+      <header className={this.props.isSection ? 'site-header section-open' : 'site-header'}>
         <Logo />
         <Nav />
       </header>

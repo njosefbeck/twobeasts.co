@@ -7,3 +7,9 @@
   color: #FFFFFF;
   transition: all 1s ease-in-out;
 }
+
+@media (min-width: 400px) {
+  .logo {
+    font-size: 48px;
+  }
+}
