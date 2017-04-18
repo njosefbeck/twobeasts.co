@@ -9,13 +9,13 @@ class Nav extends Component {
     return (
       <nav className="siteNav">
         <NavItem 
-          key='link-about'
+          key='link-About'
           page='About'
           link='/about'
           shapePath='M299.6 149.8L151 298.6 2.5 149.8 151 1.3 299.6 149.8z'
         />
         <NavItem 
-          key='link-services'
+          key='link-Services'
           page='Services'
           link='/services'
           shapePath='M282.5,224v1.2l-2.2,1.2l-1.6-0.4l-100.1-31.9l-22,102.4c-0.5,1.1-0.9,1.7-1.2,2c-0.3,0.3-0.7,0.4-1.4,0.4
@@ -24,7 +24,7 @@ class Nav extends Component {
     l100.1-31.7l1.6-0.4l2.2,1.2v1.2l-1.4,2l-77.8,70.6l77.8,70.8L282.5,224z'
         />
         <NavItem 
-          key='link-portfolio'
+          key='link-Portfolio'
           page='Portfolio'
           link='/portfolio'
           shapePath='M289.1,155.3c-23,9.5-41.3,18.1-54.9,25.7c-13.6,7.6-24.3,15.2-31.9,22.7c-7.5,7.5-15,18-22.7,31.6
@@ -34,7 +34,7 @@ class Nav extends Component {
     c13.6,7.6,32.1,16.2,55.3,25.7V155.3z'
         />
         <NavItem 
-          key='link-contact'
+          key='link-Contact'
           page='Contact'
           link='/contact'
           shapePath='M285.9,206.7l-0.4,1.5l-1.9,0.4l-1.9-0.4l-91.6-16.6l17,93.7l-1.2,2.3h-0.8c-0.8-0.3-1.4-0.6-1.9-1c-0.5-0.4-1-0.8-1.3-1.4

@@ -11,7 +11,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   text-align: center;
-  background-image: url('https://unsplash.it/2000/1500?image=1045');
+  background-image: url('./bg.jpg');
   background-size: cover;
   background-attachment: fixed;
 }

@@ -46,8 +46,23 @@
     opacity: 1;
     margin: 0;
     position: absolute;
+  }
+
+  .navItem--left {
     top: 0;
     left: 0;
+  }
+
+  .navItem--right {
+    right: 0;
+  }
+
+  .navItem--top {
+    top: -80px; /* height of shape + content card border width */
+  }
+
+  .navItem--bottom {
+    bottom: 0;
   }
 
   .navItem.section-open:hover span {

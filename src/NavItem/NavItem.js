@@ -8,9 +8,26 @@ import './NavItem.css'
 import Shape from '../Shape/Shape.js';
 
 class NavItem extends Component {
+
+  renderCSSClasses = () => {
+    const isSectionOpen = this.props.isSectionOpen;
+    const navItemPosition = this.props.navItemPosition;
+    let classes = 'navItem';
+
+    if (isSectionOpen) {
+      classes+= ' section-open';
+    }
+
+    if (navItemPosition) {
+      classes+= ` navItem--${navItemPosition}`;
+    }
+
+    return classes;
+  };
+
   render() {
     return (
-      <div className={this.props.isSectionOpen ? 'navItem section-open' : 'navItem'}>
+      <div className={this.renderCSSClasses()}>
           <Link to={this.props.link}>
             <Shape
               shapePath={this.props.shapePath}
