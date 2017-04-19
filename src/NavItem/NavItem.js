@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom';
 
 import './NavItem.css'
@@ -9,33 +10,41 @@ import Shape from '../Shape/Shape.js';
 
 class NavItem extends Component {
 
-  renderCSSClasses = () => {
+  state = {
+    redirect: false
+  };
+
+  componentDidMount() {
     const isSectionOpen = this.props.isSectionOpen;
     const navItemPosition = this.props.navItemPosition;
-    let classes = 'navItem';
+    const newClasses = [];
 
     if (isSectionOpen) {
-      classes+= ' section-open';
+      newClasses.push('section-open');
     }
+    
+  };
 
-    if (navItemPosition) {
-      classes+= ` navItem--${navItemPosition}`;
-    }
-
-    return classes;
+  handleRouting = () => {
+    this.props.handleNavItemClick(this.props.id);
   };
 
   render() {
-    return (
-      <div className={this.renderCSSClasses()}>
-          <Link to={this.props.link}>
+
+    if (this.props.redirect) {
+      return (
+        <Redirect to={this.props.link} />
+      )
+    } else {
+      return (
+        <div className={this.props.classes.join(' ')} onClick={this.handleRouting}>
             <Shape
               shapePath={this.props.shapePath}
             />
             <span className="page">{this.props.page}</span>
-          </Link>
-      </div>
-    )
+        </div>
+      )
+    }
   }
 }
 

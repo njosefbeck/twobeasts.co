@@ -41,6 +41,7 @@ class ContentCard extends Component {
           isSectionOpen={true}
           shapePath={this.props.componentShapePath}
           navItemPosition={this.props.componentShapePosition}
+          animateDirection={this.props.animateDirection}
         />
       </div>
     )

@@ -1,6 +1,7 @@
 .navItem {
   position: relative;
   margin: 0 14px 0;
+  transition: all 1s ease-in-out;
 }
 
 .navItem:hover {
@@ -24,6 +25,22 @@
 .navItem.section-open {
   visibility: hidden;
   opacity: 0;
+}
+
+.navItem.fly-out-left {
+  transform: translateX(-100vw);
+}
+
+.navItem.fly-out-right {
+  transform: translateX(100vw);
+}
+
+.navItem.fly-out-top {
+  transform: translateY(100vh);
+}
+
+.navItem.fly-out-bottom {
+  transform: translateY(-100vh);
 }
 
 @media (min-width: 600px) {

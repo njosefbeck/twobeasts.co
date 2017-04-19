@@ -26,6 +26,7 @@ class App extends Component {
       component='About'
       componentShapePath='M299.6 149.8L151 298.6 2.5 149.8 151 1.3 299.6 149.8z'
       componentShapePosition="left"
+      animateDirection='left'
     />;
   };
 
@@ -38,6 +39,7 @@ class App extends Component {
     l1.6,0.4l100.3,31.7L151.1,6c0.4-0.8,0.8-1.4,1.3-1.9c0.5-0.5,0.8-0.7,1.1-0.7c0.7,0.3,1.2,0.6,1.6,1s0.7,0.9,1,1.4l22.4,102.4
     l100.1-31.7l1.6-0.4l2.2,1.2v1.2l-1.4,2l-77.8,70.6l77.8,70.8L282.5,224z'
       componentShapePosition="top"
+      animateDirection='top'
     />;
   };
 
@@ -51,6 +53,7 @@ class App extends Component {
     c7.6-13.6,16.4-32.2,26.3-55.8h7.8c9.8,23.6,18.5,42.2,26.1,55.8c7.6,13.6,15.2,24.1,22.7,31.6c7.4,7.5,17.9,15,31.5,22.7
     c13.6,7.6,32.1,16.2,55.3,25.7V155.3z'
     componentShapePosition="bottom"
+    animateDirection='bottom'
     />;
   };
 
@@ -65,6 +68,7 @@ class App extends Component {
     c0.4-0.3,1.1-0.5,1.8-0.7l1.2,0.4l0.8,1.9l-0.4,1.9l-16.6,91.6l91.6-16.6l1.9-0.4l2.3,1.2v1c-0.1,0.5-0.4,1.1-0.9,1.6
     c-0.5,0.6-0.9,1.1-1.4,1.4l-76.6,52.8l76.6,53c0.6,0.6,1.1,1.2,1.4,1.6C285.4,205.7,285.7,206.1,285.9,206.7z'
     componentShapePosition="right"
+    animateDirection='right'
     />;
   };
 
@@ -72,11 +76,11 @@ class App extends Component {
     return (
       <Router>
         <div className={this.state.isSectionOpen ? 'App section-open' : 'App'}>
-          <Route exact path="/" component={SiteHeader} />
-          <Route path="/about" render={this.renderAboutPage} />
-          <Route path="/services" render={this.renderServicesPage} />
-          <Route path="/portfolio" render={this.renderPortfolioPage} />
-          <Route path="/contact" render={this.renderContactPage} />
+          <Route exact path="/" location={location} key={location.key} component={SiteHeader} />
+          <Route path="/about" location={location} key={location.key} render={this.renderAboutPage} />
+          <Route path="/services" location={location} key={location.key} render={this.renderServicesPage} />
+          <Route path="/portfolio" location={location} key={location.key} render={this.renderPortfolioPage} />
+          <Route path="/contact" location={location} key={location.key} render={this.renderContactPage} />
         </div>
       </Router>
     );

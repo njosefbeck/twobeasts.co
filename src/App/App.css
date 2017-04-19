@@ -11,7 +11,30 @@
   margin-top: 20px;
 }
 
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 5000ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 5000ms ease-in;
+}
+
 @media (min-width: 600px) {
+  .App {
+    overflow: hidden;
+  }
+
   .App.section-open {
     display: flex;
     height: 100vh;
