@@ -1,14 +1,14 @@
-.navItem {
+.nav-item {
   position: relative;
   margin: 0 14px 0;
   transition: all 1s ease-in-out;
 }
 
-.navItem:hover {
+.nav-item:hover {
   cursor: pointer;
 }
 
-.navItem span {
+.nav-item span {
   position: absolute;
   visibility: visible;
   opacity: 1;
@@ -22,67 +22,51 @@
   text-decoration: none;
 }
 
-.navItem.section-open {
+.nav-item.section-open {
   visibility: hidden;
   opacity: 0;
 }
 
-.navItem.fly-out-left {
-  transform: translateX(-100vw);
-}
-
-.navItem.fly-out-right {
-  transform: translateX(100vw);
-}
-
-.navItem.fly-out-top {
-  transform: translateY(100vh);
-}
-
-.navItem.fly-out-bottom {
-  transform: translateY(-100vh);
-}
-
 @media (min-width: 600px) {
-  .navItem {
+  .nav-item {
     margin: 0 10px 0;
   }
 
-  .navItem span {
+  .nav-item span {
     visibility: hidden;
     opacity: 0;
   }
 
-  .navItem:hover span {
+  .nav-item:hover span {
     visibility: visible;
     opacity: 1;
   }
 
-  .navItem.section-open {
+  .nav-item.section-open {
     visibility: visible;
     opacity: 1;
     margin: 0;
     position: absolute;
   }
 
-  .navItem--left {
+  .nav-item--left {
     top: 0;
     left: 0;
   }
 
-  .navItem--right {
+  .nav-item--right {
     right: 0;
   }
 
-  .navItem--top {
+  .nav-item--top {
     top: -80px; /* height of shape + content card border width */
   }
 
-  .navItem--bottom {
+  .nav-item--bottom {
     bottom: 0;
   }
 
-  .navItem.section-open:hover span {
+  .nav-item.section-open:hover span {
     visibility: hidden;
     opacity: 0;
   }

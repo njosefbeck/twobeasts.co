@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import {
   BrowserRouter as Router,
@@ -10,6 +11,14 @@ import './App.css';
 import SiteHeader from '../SiteHeader/SiteHeader.js';
 import ContentCard from '../ContentCard/ContentCard.js';
 
+class Home extends Component {
+  render() {
+    return (
+      <span></span>
+    )
+  }
+};
+
 class App extends Component {
 
   state = {
@@ -20,18 +29,34 @@ class App extends Component {
     this.setState({ isSectionOpen: bool });
   };
 
+  renderHomePage = () => {
+    return <Home/>;
+  };
+
   renderAboutPage = () => {
-    return <ContentCard
+    const About = <ContentCard
+      key={'About'}
       isContentCardOpen={this.handleOpenSection}
       component='About'
       componentShapePath='M299.6 149.8L151 298.6 2.5 149.8 151 1.3 299.6 149.8z'
       componentShapePosition="left"
       animateDirection='left'
     />;
+
+    return <CSSTransitionGroup
+      transitionName="fade"
+      transitionAppear={true}
+      transitionAppearTimeout={10000}
+      transitionEnterTimeout={10000}
+      transitionLeaveTimeout={10000}
+    >
+      {About}
+    </CSSTransitionGroup>
   };
 
   renderServicesPage = () => {
-    return <ContentCard
+    const Services = <ContentCard
+      key={'Services'}
       isContentCardOpen={this.handleOpenSection}
       component='Services'
       componentShapePath='M282.5,224v1.2l-2.2,1.2l-1.6-0.4l-100.1-31.9l-22,102.4c-0.5,1.1-0.9,1.7-1.2,2c-0.3,0.3-0.7,0.4-1.4,0.4
@@ -41,10 +66,21 @@ class App extends Component {
       componentShapePosition="top"
       animateDirection='top'
     />;
+
+    return <CSSTransitionGroup
+      transitionName="fade"
+      transitionAppear={true}
+      transitionAppearTimeout={10000}
+      transitionEnterTimeout={10000}
+      transitionLeaveTimeout={10000}
+    >
+      {Services}
+    </CSSTransitionGroup> 
   };
 
   renderPortfolioPage = () => {
-    return <ContentCard
+    const Portfolio = <ContentCard
+      key={'Portfolio'}
       isContentCardOpen={this.handleOpenSection}
       component='Portfolio'
       componentShapePath='M289.1,155.3c-23,9.5-41.3,18.1-54.9,25.7c-13.6,7.6-24.3,15.2-31.9,22.7c-7.5,7.5-15,18-22.7,31.6
@@ -55,10 +91,21 @@ class App extends Component {
     componentShapePosition="bottom"
     animateDirection='bottom'
     />;
+
+    return <CSSTransitionGroup
+      transitionName="fade"
+      transitionAppear={true}
+      transitionAppearTimeout={10000}
+      transitionEnterTimeout={10000}
+      transitionLeaveTimeout={10000}
+    >
+      {Portfolio}
+    </CSSTransitionGroup> 
   };
 
   renderContactPage = () => {
-    return <ContentCard
+    const Contact = <ContentCard
+      key={'Contact'}
       isContentCardOpen={this.handleOpenSection}
       component='Contact'
       componentShapePath='M285.9,206.7l-0.4,1.5l-1.9,0.4l-1.9-0.4l-91.6-16.6l17,93.7l-1.2,2.3h-0.8c-0.8-0.3-1.4-0.6-1.9-1c-0.5-0.4-1-0.8-1.3-1.4
@@ -70,13 +117,24 @@ class App extends Component {
     componentShapePosition="right"
     animateDirection='right'
     />;
+
+    return <CSSTransitionGroup
+      transitionName="fade"
+      transitionAppear={true}
+      transitionAppearTimeout={10000}
+      transitionEnterTimeout={10000}
+      transitionLeaveTimeout={10000}
+    >
+      {Contact}
+    </CSSTransitionGroup> 
   };
 
   render() {
     return (
       <Router>
         <div className={this.state.isSectionOpen ? 'App section-open' : 'App'}>
-          <Route exact path="/" location={location} key={location.key} component={SiteHeader} />
+          <SiteHeader />
+          <Route exact path="/" location={location} key={location.key} component={this.renderHomePage} />
           <Route path="/about" location={location} key={location.key} render={this.renderAboutPage} />
           <Route path="/services" location={location} key={location.key} render={this.renderServicesPage} />
           <Route path="/portfolio" location={location} key={location.key} render={this.renderPortfolioPage} />

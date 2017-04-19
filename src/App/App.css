@@ -11,14 +11,19 @@
   margin-top: 20px;
 }
 
-.fade-enter {
+.fade-appear {
   opacity: 0;
   z-index: 1;
 }
 
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 5000ms ease-in;
+  transition: opacity 1000ms ease-in;
 }
 
 .fade-leave {
@@ -27,7 +32,7 @@
 
 .fade-leave.fade-leave-active {
   opacity: 0.01;
-  transition: opacity 5000ms ease-in;
+  transition: opacity 10000ms ease-in;
 }
 
 @media (min-width: 600px) {

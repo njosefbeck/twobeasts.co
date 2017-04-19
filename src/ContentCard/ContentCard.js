@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import SiteHeader from '../SiteHeader/SiteHeader.js';
-import NavItem from '../NavItem/NavItem.js';
 import AboutContentCard from '../AboutContentCard/AboutContentCard.js';
 import ServicesContentCard from '../ServicesContentCard/ServicesContentCard.js';
 import PortfolioContentCard from '../PortfolioContentCard/PortfolioContentCard.js';
@@ -29,20 +27,7 @@ class ContentCard extends Component {
   render() {
     return (
       <div className="content-card-container">
-        <SiteHeader
-          isSection={true}
-        />
         {this.renderContentCard(this.props.component)}
-        <NavItem
-          key='link-{this.props.component}'
-          id='link-{this.props.component}'
-          page='Home'
-          link='/'
-          isSectionOpen={true}
-          shapePath={this.props.componentShapePath}
-          navItemPosition={this.props.componentShapePosition}
-          animateDirection={this.props.animateDirection}
-        />
       </div>
     )
   }
